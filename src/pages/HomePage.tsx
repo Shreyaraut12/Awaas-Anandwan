@@ -30,11 +30,11 @@ const HomePage = () => {
       <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
-            alt="Two brown deer beside trees and mountain" 
+            src="/lovable-uploads/fdaacaa0-02bb-4bf3-bb62-8e3a1ec8b795.png" 
+            alt="Forest with tall trees and green foliage" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/35 bg-gradient-to-b from-black/20 to-black/50"></div>
+          <div className="absolute inset-0 bg-primary-500/25 bg-gradient-to-b from-primary-500/15 to-primary-600/30"></div>
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-white">
           <div className="max-w-3xl text-center animate-fade-up">
@@ -42,14 +42,14 @@ const HomePage = () => {
             <p className="text-xl md:text-2xl mb-10 leading-relaxed max-w-2xl mx-auto">
               a compassionate community founded by Baba Amte, offering hope, healing, and harmony with nature.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 mt-4">
+            <div className="flex flex-wrap justify-center gap-8 mt-4">
               <Link to="/register">
-                <Button size="lg" className="bg-primary-500 hover:bg-primary-600 text-white rounded-md px-8 py-6 text-lg h-auto">
+                <Button size="default" className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 h-12 rounded-md">
                   Register as Guest
                 </Button>
               </Link>
               <Link to="/admin-login">
-                <Button size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white rounded-md px-8 py-6 text-lg h-auto">
+                <Button size="default" className="bg-accent-orange hover:bg-accent-orange/90 text-white px-6 py-2 h-12 rounded-md">
                   Admin Login
                 </Button>
               </Link>

@@ -87,48 +87,7 @@ const FaqsPage = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-primary-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Still Have Questions?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-700">
-            If you couldn't find the answer to your question, feel free to contact us directly. Our team is here to help!
-          </p>
-          <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-            <div className="text-gray-700 space-y-2 mb-6">
-              <p>Email: info@anandwanawaas.org</p>
-              <p>Phone: +91 123 456 7890</p>
-              <p>Hours: 9:00 AM - 5:00 PM (IST), Monday - Saturday</p>
-            </div>
-            <Button className="bg-primary-500 hover:bg-primary-600 text-white w-full">
-              Send Us a Message
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-primary-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Experience Anandwan Awaas?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Register now to book your stay or learn more about our retreat and the experiences we offer.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/register">
-              <Button size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white">
-                Register Now
-              </Button>
-            </Link>
-            <Link to="/guide">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                Explore Our Guide
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };

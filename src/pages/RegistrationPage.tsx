@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { 
   Select,
   SelectContent,
@@ -25,6 +25,9 @@ const RegistrationPage = () => {
     purpose: "",
     arrivalDate: undefined as Date | undefined,
     departureDate: undefined as Date | undefined,
+    mealRequired: false,
+    groupType: "single",
+    groupSize: "1",
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -219,16 +222,72 @@ const RegistrationPage = () => {
                       </div>
                     </div>
                     
-                    <div>
-                      <Label htmlFor="specialRequests">Special Requests or Notes</Label>
-                      <Textarea
-                        id="specialRequests"
-                        name="specialRequests"
-                        placeholder="Any special requests, dietary preferences, or additional information we should know"
-                        className="mt-1"
-                        rows={4}
-                      />
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="mealRequired"
+                          checked={formData.mealRequired}
+                          onCheckedChange={(checked) => 
+                            setFormData(prev => ({ ...prev, mealRequired: checked as boolean }))
+                          }
+                        />
+                        <Label htmlFor="mealRequired">Include meals during stay</Label>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label>Booking Type <span className="text-red-500">*</span></Label>
+                        <Select
+                          onValueChange={(value) => {
+                            handleSelectChange("groupType", value);
+                            if (value === "single") {
+                              handleSelectChange("groupSize", "1");
+                            }
+                          }}
+                          value={formData.groupType}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select booking type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="single">Single</SelectItem>
+                            <SelectItem value="group">Group</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      {formData.groupType === "group" && (
+                        <div className="space-y-2">
+                          <Label>Number of People <span className="text-red-500">*</span></Label>
+                          <Select
+                            onValueChange={(value) => handleSelectChange("groupSize", value)}
+                            value={formData.groupSize}
+                          >
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select group size" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {[2,3,4,5,6,7,8,9,10].map((num) => (
+                                <SelectItem key={num} value={num.toString()}>
+                                  {num} People
+                                </SelectItem>
+                              ))}
+                              <SelectItem value="more">More than 10 (Contact us)</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      )}
                     </div>
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="specialRequests">Special Requests or Notes</Label>
+                    <Textarea
+                      id="specialRequests"
+                      name="specialRequests"
+                      placeholder="Any special requests, dietary preferences, or additional information we should know"
+                      className="mt-1"
+                      rows={4}
+                    />
                   </div>
                   
                   <div className="pt-4">

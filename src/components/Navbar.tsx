@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -35,10 +34,14 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-white sticky top-0 z-50 shadow-sm">
       <div className="container px-4 mx-auto">
-        <div className="flex justify-between items-center py-3">
+        <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={closeMenu}>
-            <span className="text-2xl font-serif font-bold text-primary-600">Anandwan Awaas</span>
+            <img 
+              src="/anandwaan .jpg"
+              alt="Anandwan Awaas Logo" 
+              className="h-20 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -19,60 +18,56 @@ const AboutPage = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-              <div className="w-16 h-1 bg-primary-500 mb-6"></div>
-              <p className="text-gray-700 mb-4">
-                Anandwan Awaas was founded in 1985 with a vision to create a haven where individuals could reconnect with nature while supporting a sustainable community. What began as a small initiative by a group of environmentalists and social workers has grown into a transformative retreat that has touched thousands of lives.
-              </p>
-              <p className="text-gray-700 mb-4">
-                The name "Anandwan" translates to "Forest of Joy," reflecting our belief that true happiness comes from living in harmony with nature and serving others. Our retreat is nestled in the heart of a lush forest, offering visitors a chance to escape the chaos of modern life and rediscover their connection to the earth.
-              </p>
-              <p className="text-gray-700">
-                Today, Anandwan Awaas continues to evolve while staying true to its founding principles of compassion, sustainability, and community development.
-              </p>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" 
-                alt="Foggy mountain summit" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Mission Section */}
+<section className="py-16 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+        <div className="w-16 h-1 bg-primary-500 mb-6"></div>
+        <p className="text-gray-700 mb-4">
+          At Anandwan Awaas, our mission is to create a nurturing sanctuary where individuals of all abilities find dignity, opportunity, and connection. Rooted in compassion, we provide a space where people can heal, grow, and contribute meaningfully—regardless of physical challenges or background.
+        </p>
+        <p className="text-gray-700">
+          We are committed to fostering a diverse and inclusive community that values disability empowerment, women's employment, and collective well-being. Our programs are designed to promote sustainable living, mindfulness, and social responsibility, offering a platform for self-reliance, skill development, and lifelong learning.
+        </p>
+      </div>
+      <div className="rounded-lg overflow-hidden shadow-lg">
+        <img 
+          src="https://assets.reflections.live/1704872077487-lr7ejutw.png" 
+          alt="Foggy mountain summit" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Mission & Vision Section */}
-      <section className="py-16 bg-primary-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Mission & Vision</h2>
-              <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
-            </div>
+              
+{/* Our History Section */}
+<section className="py-16 bg-primary-50">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold mb-4">Anandwan Awaas: A Sanctuary of Healing and Service</h2>
+      <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
+    </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold mb-4 text-primary-600">Our Mission</h3>
-                <p className="text-gray-700">
-                  To provide a rejuvenating retreat that connects guests with nature while supporting sustainable community development and holistic wellness practices.
-                </p>
-              </div>
+    <div className="max-w-4xl mx-auto space-y-8 text-gray-700 text-lg leading-relaxed">
+      <p>
+        Founded in 1992 as a small meditation center, Anandwan Awaas has grown into a haven for healing, community, and sustainable living. Rooted in compassion, it offers support and dignity to leprosy patients and others in need, while nurturing a deep connection to nature.
+      </p>
 
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold mb-4 text-primary-600">Our Vision</h3>
-                <p className="text-gray-700">
-                  A world where people live in harmony with nature, communities thrive through sustainable practices, and wellness is accessible to all.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <p>
+        What began with five simple huts is now a thriving center powered by organic farming, renewable energy, and eco-friendly construction. Since 2005, our volunteer program has brought thousands of people from around the world to contribute to reforestation, holistic care, and community development.
+      </p>
+
+      <p>
+        Today, Anandwan Awaas continues to inspire through service, sustainability, and the belief that healing the Earth goes hand in hand with healing ourselves.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Values Section */}
       <section className="py-16 bg-white">
@@ -137,27 +132,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-primary-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Join Our Community</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Experience the beauty and tranquility of Anandwan Awaas. Register as a guest or explore ways to contribute to our mission.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/register">
-              <Button size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white">
-                Register Now
-              </Button>
-            </Link>
-            <Link to="/guide">
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                Learn More
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

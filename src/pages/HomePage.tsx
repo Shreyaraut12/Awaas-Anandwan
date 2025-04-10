@@ -34,20 +34,22 @@ const HomePage = () => {
             alt="Forest trees" 
             className="w-full h-full object-cover"
           />
-          <div className="hero-overlay"></div>
+          <div className="absolute inset-0 bg-black/35 bg-gradient-to-b from-black/20 to-black/50"></div>
         </div>
-        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center text-white">
-          <div className="max-w-2xl animate-fade-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Welcome to Anandwan Awaas</h1>
-            <p className="text-xl mb-8">Transforming lives through compassion and community</p>
-            <div className="flex flex-wrap gap-4">
+        <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-white">
+          <div className="max-w-3xl text-center animate-fade-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6">Experience Anandwan</h1>
+            <p className="text-xl md:text-2xl mb-10 leading-relaxed max-w-2xl mx-auto">
+              a compassionate community founded by Baba Amte, offering hope, healing, and harmony with nature.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 mt-4">
               <Link to="/register">
-                <Button size="lg" className="bg-primary-500 hover:bg-primary-600 text-white">
+                <Button size="lg" className="bg-primary-500 hover:bg-primary-600 text-white rounded-md px-8 py-6 text-lg h-auto">
                   Register as Guest
                 </Button>
               </Link>
               <Link to="/admin-login">
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+                <Button size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white rounded-md px-8 py-6 text-lg h-auto">
                   Admin Login
                 </Button>
               </Link>

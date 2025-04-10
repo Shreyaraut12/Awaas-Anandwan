@@ -30,8 +30,8 @@ const HomePage = () => {
       <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86" 
-            alt="Forest trees" 
+            src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
+            alt="Two brown deer beside trees and mountain" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/35 bg-gradient-to-b from-black/20 to-black/50"></div>

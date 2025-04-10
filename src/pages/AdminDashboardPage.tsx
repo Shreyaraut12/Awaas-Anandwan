@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -15,7 +14,7 @@ import {
   Hospital,
   BookOpen,
   Scissors,
-  Tool,
+  Hammer,
   Coffee,
   Users,
   Calendar,
@@ -62,7 +61,7 @@ const AdminDashboardPage = () => {
     },
     {
       name: "Handicrafts",
-      icon: <Tool className="h-8 w-8 text-primary-600" />,
+      icon: <Hammer className="h-8 w-8 text-primary-600" />,
       stats: {
         artisans: "56",
         products: "120+",

@@ -1,4 +1,5 @@
-
+import React from "react";
+import Layout from "../components/Layout";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -40,72 +41,74 @@ const AdminLoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-beige py-12 px-4">
-      <div className="max-w-md w-full">
-        <div className="glassmorphism rounded-lg overflow-hidden">
-          <div className="p-8">
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold">Admin Login</h1>
-              <p className="text-gray-600 mt-2">Sign in to access the dashboard</p>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="mt-1"
-                  />
+    <Layout>
+      <div className="min-h-screen flex items-center justify-center bg-neutral-beige py-12 px-4">
+        <div className="max-w-md w-full">
+          <div className="glassmorphism rounded-lg overflow-hidden">
+            <div className="p-8">
+              <div className="text-center mb-8">
+                <h1 className="text-3xl font-bold">Admin Login</h1>
+                <p className="text-gray-600 mt-2">Sign in to access the dashboard</p>
+              </div>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-4">
+                  <div>
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                      className="mt-1"
+                    />
+                  </div>
+                  
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="password">Password</Label>
+                      <a href="#" className="text-sm text-primary-600 hover:text-primary-500">
+                        Forgot password?
+                      </a>
+                    </div>
+                    <Input
+                      id="password"
+                      type="password"
+                      placeholder="Enter your password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      className="mt-1"
+                    />
+                  </div>
                 </div>
                 
                 <div>
-                  <div className="flex items-center justify-between">
-                    <Label htmlFor="password">Password</Label>
-                    <a href="#" className="text-sm text-primary-600 hover:text-primary-500">
-                      Forgot password?
-                    </a>
-                  </div>
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    className="mt-1"
-                  />
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary-600 hover:bg-primary-700 text-white"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Signing in..." : "Sign in"}
+                  </Button>
                 </div>
-              </div>
+              </form>
               
-              <div>
-                <Button
-                  type="submit"
-                  className="w-full bg-primary-600 hover:bg-primary-700 text-white"
-                  disabled={isLoading}
-                >
-                  {isLoading ? "Signing in..." : "Sign in"}
-                </Button>
+              <div className="mt-6 text-center text-sm">
+                <p className="text-gray-600">
+                  Not an administrator?{" "}
+                  <a href="/" className="font-medium text-primary-600 hover:text-primary-500">
+                    Return to homepage
+                  </a>
+                </p>
               </div>
-            </form>
-            
-            <div className="mt-6 text-center text-sm">
-              <p className="text-gray-600">
-                Not an administrator?{" "}
-                <a href="/" className="font-medium text-primary-600 hover:text-primary-500">
-                  Return to homepage
-                </a>
-              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

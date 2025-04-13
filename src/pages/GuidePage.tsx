@@ -1,10 +1,12 @@
+import React from "react";
+import Layout from "../components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { BedDouble, Trees, Heart, Gift } from 'lucide-react';
 
 const GuidePage = () => {
   return (
-    <div className="bg-neutral-beige min-h-screen">
+    <Layout>
       {/* Hero Section */}
       <section className="relative py-12">
         <div className="container mx-auto px-4">
@@ -112,9 +114,7 @@ const GuidePage = () => {
           </div>
         </div>
       </section>
-
-     
-    </div>
+    </Layout>
   );
 };
 

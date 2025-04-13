@@ -1,4 +1,5 @@
-
+import React from "react";
+import Layout from "../components/Layout";
 import {
   Accordion,
   AccordionContent,
@@ -53,7 +54,7 @@ const FaqsPage = () => {
   ];
 
   return (
-    <div className="bg-neutral-beige">
+    <Layout>
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
@@ -86,9 +87,7 @@ const FaqsPage = () => {
           </div>
         </div>
       </section>
-
-     
-    </div>
+    </Layout>
   );
 };
 

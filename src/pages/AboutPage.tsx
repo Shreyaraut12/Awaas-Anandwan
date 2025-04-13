@@ -1,9 +1,11 @@
+import React from "react";
+import Layout from "../components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (
-    <div className="bg-neutral-beige">
+    <Layout>
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
@@ -19,55 +21,53 @@ const AboutPage = () => {
 
       {/* Story Section */}
       {/* Mission Section */}
-<section className="py-16 bg-white">
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-        <div className="w-16 h-1 bg-primary-500 mb-6"></div>
-        <p className="text-gray-700 mb-4">
-          At Anandwan Awaas, our mission is to create a nurturing sanctuary where individuals of all abilities find dignity, opportunity, and connection. Rooted in compassion, we provide a space where people can heal, grow, and contribute meaningfully—regardless of physical challenges or background.
-        </p>
-        <p className="text-gray-700">
-          We are committed to fostering a diverse and inclusive community that values disability empowerment, women's employment, and collective well-being. Our programs are designed to promote sustainable living, mindfulness, and social responsibility, offering a platform for self-reliance, skill development, and lifelong learning.
-        </p>
-      </div>
-      <div className="rounded-lg overflow-hidden shadow-lg">
-        <img 
-          src="https://assets.reflections.live/1704872077487-lr7ejutw.png" 
-          alt="Foggy mountain summit" 
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+              <div className="w-16 h-1 bg-primary-500 mb-6"></div>
+              <p className="text-gray-700 mb-4">
+                At Anandwan Awaas, our mission is to create a nurturing sanctuary where individuals of all abilities find dignity, opportunity, and connection. Rooted in compassion, we provide a space where people can heal, grow, and contribute meaningfully—regardless of physical challenges or background.
+              </p>
+              <p className="text-gray-700">
+                We are committed to fostering a diverse and inclusive community that values disability empowerment, women's employment, and collective well-being. Our programs are designed to promote sustainable living, mindfulness, and social responsibility, offering a platform for self-reliance, skill development, and lifelong learning.
+              </p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="https://assets.reflections.live/1704872077487-lr7ejutw.png" 
+                alt="Foggy mountain summit" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-              
-{/* Our History Section */}
-<section className="py-16 bg-primary-50">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl font-bold mb-4">Anandwan Awaas: A Sanctuary of Healing and Service</h2>
-      <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
-    </div>
+      {/* Our History Section */}
+      <section className="py-16 bg-primary-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Anandwan Awaas: A Sanctuary of Healing and Service</h2>
+            <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
+          </div>
 
-    <div className="max-w-4xl mx-auto space-y-8 text-gray-700 text-lg leading-relaxed">
-      <p>
-        Founded in 1992 as a small meditation center, Anandwan Awaas has grown into a haven for healing, community, and sustainable living. Rooted in compassion, it offers support and dignity to leprosy patients and others in need, while nurturing a deep connection to nature.
-      </p>
+          <div className="max-w-4xl mx-auto space-y-8 text-gray-700 text-lg leading-relaxed">
+            <p>
+              Founded in 1992 as a small meditation center, Anandwan Awaas has grown into a haven for healing, community, and sustainable living. Rooted in compassion, it offers support and dignity to leprosy patients and others in need, while nurturing a deep connection to nature.
+            </p>
 
-      <p>
-        What began with five simple huts is now a thriving center powered by organic farming, renewable energy, and eco-friendly construction. Since 2005, our volunteer program has brought thousands of people from around the world to contribute to reforestation, holistic care, and community development.
-      </p>
+            <p>
+              What began with five simple huts is now a thriving center powered by organic farming, renewable energy, and eco-friendly construction. Since 2005, our volunteer program has brought thousands of people from around the world to contribute to reforestation, holistic care, and community development.
+            </p>
 
-      <p>
-        Today, Anandwan Awaas continues to inspire through service, sustainability, and the belief that healing the Earth goes hand in hand with healing ourselves.
-      </p>
-    </div>
-  </div>
-</section>
-
+            <p>
+              Today, Anandwan Awaas continues to inspire through service, sustainability, and the belief that healing the Earth goes hand in hand with healing ourselves.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Values Section */}
       <section className="py-16 bg-white">
@@ -131,9 +131,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-
-      
-    </div>
+    </Layout>
   );
 };
 

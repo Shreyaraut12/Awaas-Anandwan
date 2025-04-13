@@ -1,3 +1,5 @@
+import React from "react";
+import Layout from "../components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -42,7 +44,7 @@ const TeamPage = () => {
   ];
 
   return (
-    <div className="bg-neutral-beige">
+    <Layout>
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
@@ -89,32 +91,31 @@ const TeamPage = () => {
       </section>
 
       {/* Volunteer Section */}
-<section className="py-16" style={{ backgroundColor: 'rgba(246,244,240,1)' }}>
-  <div className="container mx-auto px-4 text-center text-gray-800">
-    <h2 className="text-3xl font-bold mb-4">Volunteer With Us</h2>
-    <p className="text-lg mb-8 max-w-2xl mx-auto">
-      Can't join full-time? Consider volunteering! We offer various opportunities for individuals who want to contribute to our mission while gaining valuable experience.
-    </p>
-    <div className="flex flex-wrap justify-center gap-4">
-      <Link to="/guide">
-        <Button size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white">
-          Learn About Volunteering
-        </Button>
-      </Link>
-      <Link to="/register">
-        <Button
-          size="lg"
-          variant="outline"
-          className="border-gray-800 text-gray-800 hover:bg-gray-800/10"
-        >
-          Register Now
-        </Button>
-      </Link>
-    </div>
-  </div>
-</section>
-
-    </div>
+      <section className="py-16" style={{ backgroundColor: 'rgba(246,244,240,1)' }}>
+        <div className="container mx-auto px-4 text-center text-gray-800">
+          <h2 className="text-3xl font-bold mb-4">Volunteer With Us</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            Can't join full-time? Consider volunteering! We offer various opportunities for individuals who want to contribute to our mission while gaining valuable experience.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/guide">
+              <Button size="lg" className="bg-accent-orange hover:bg-accent-orange/90 text-white">
+                Learn About Volunteering
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-gray-800 text-gray-800 hover:bg-gray-800/10"
+              >
+                Register Now
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 

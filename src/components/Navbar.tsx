@@ -1,17 +1,10 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState('EN');
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -20,11 +13,6 @@ const Navbar = () => {
 
   const closeMenu = () => {
     setIsOpen(false);
-  };
-
-  const toggleLanguage = (lang: string) => {
-    setLanguage(lang);
-    closeMenu();
   };
 
   const isActive = (path: string) => {
@@ -36,11 +24,11 @@ const Navbar = () => {
       <div className="container px-4 mx-auto">
         <div className="flex justify-between items-center py-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center" onClick={closeMenu}>
+          <Link to="/" className="flex items-center size-20" onClick={closeMenu}>
             <img 
-              src="/anandwaan .jpg"
+              src="/public/anandwaan .jpg"
               alt="Anandwan Awaas Logo" 
-              className="h-20 w-auto object-contain"
+              className="h-30 w-30"
             />
           </Link>
 
@@ -71,20 +59,6 @@ const Navbar = () => {
               Team
             </Link>
             
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center gap-1">
-                  <Globe size={16} />
-                  {language}
-                  <ChevronDown size={16} />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => toggleLanguage('EN')}>English</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => toggleLanguage('HI')}>हिंदी</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            
             <Link to="/admin-login">
               <Button variant="ghost" size="sm">Login</Button>
             </Link>
@@ -113,21 +87,6 @@ const Navbar = () => {
             <Link to="/faqs" className="text-gray-700 hover:text-primary-500" onClick={closeMenu}>FAQs</Link>
             <Link to="/guide" className="text-gray-700 hover:text-primary-500" onClick={closeMenu}>Guide</Link>
             <Link to="/team" className="text-gray-700 hover:text-primary-500" onClick={closeMenu}>Team</Link>
-            
-            <div className="flex items-center space-x-4 border-t pt-4">
-              <button 
-                onClick={() => toggleLanguage('EN')} 
-                className={`text-sm ${language === 'EN' ? 'font-bold text-primary-600' : 'text-gray-700'}`}
-              >
-                English
-              </button>
-              <button 
-                onClick={() => toggleLanguage('HI')} 
-                className={`text-sm ${language === 'HI' ? 'font-bold text-primary-600' : 'text-gray-700'}`}
-              >
-                हिंदी
-              </button>
-            </div>
             
             <div className="flex flex-col space-y-2 border-t pt-4">
               <Link to="/admin-login" onClick={closeMenu}>

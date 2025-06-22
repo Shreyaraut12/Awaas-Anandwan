@@ -1,34 +1,35 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 
+// Routes
+import guestRoutes from './routes/guestRoutes';
 import authRoutes from './routes/authRoutes';
 
+// Initialize environment variables
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use('/api/guests', guestRoutes);
 app.use('/api/auth', authRoutes);
 
-app.get('/', (_req, res) => {
-  res.send('API is working 🚀');
-});
-
+// Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI || '', {
-    dbName: 'Awaas-Anandwan',
-  })
+  .connect(process.env.MONGO_URI as string)
   .then(() => {
-    console.log('MongoDB connected successfully');
+    console.log('✅ Connected to MongoDB');
+    const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
-    console.error('MongoDB connection error:', err);
+    console.error('❌ MongoDB connection error:', err);
   });

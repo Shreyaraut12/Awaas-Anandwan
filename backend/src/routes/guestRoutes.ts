@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import Guest from '../models/Guest';
+import auth from '../middleware/auth'; // ✅ Import auth middleware
 
 const router = Router();
 
+// Register a guest
 router.post('/register', async (req, res) => {
   try {
     const guest = new Guest(req.body);
@@ -13,6 +15,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// Get all guests
 router.get('/all', async (req, res) => {
   try {
     const guests = await Guest.find();
@@ -22,4 +25,15 @@ router.get('/all', async (req, res) => {
   }
 });
 
+// 🔐 Protected route: Get guest stats (only for authenticated admin)
+router.get('/stats', auth, async (req, res) => {
+  try {
+    const totalGuests = await Guest.countDocuments();
+    res.json({ totalGuests });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
+

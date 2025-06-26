@@ -13,7 +13,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.get('/all', async (req, res) => {
+router.get('/all', async (_req, res) => {
   try {
     const guests = await Guest.find();
     res.json(guests);
@@ -22,4 +22,3 @@ router.get('/all', async (req, res) => {
   }
 });
 
-export default router;
